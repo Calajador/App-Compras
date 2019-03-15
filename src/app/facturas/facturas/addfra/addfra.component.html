@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset 2">
+    <h2>Añadir nueva factura</h2>
+    <a class="btn btn-primary float-md-right" routerLink="/facturas">Regresar al listado</a>
+    <br>
+    <form [formGroup]="facturaForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="tipo">Cliente</label>
+
+
+        <input type="text"
+               class="form-control"
+               id="proveedor"
+               formControlName="proveedor">
+
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha Factura</label>
+
+          <input type="date"
+                 class="form-control"
+                 id="fecha"
+                 formControlName="fecha">
+
+        </div>
+        <div class="form-group">
+          <label for="concepto">Nº de Factura/Concepto</label>
+
+          <input type="text"
+                 class="form-control"
+                 id="concepto"
+                 formControlName="concepto">
+
+        </div>
+        <div class="form-group">
+          <label for="base">Base Imponible</label>
+
+          <input type="number"
+                 class="form-control"
+                 id="base"
+                 formControlName="base">
+
+        </div>
+        <div class="form-group">
+          <label for="tipo">Tipo de IVA</label>
+
+          <select class="form-control"
+                  id="tipo"
+                  formControlName="tipo">
+                  <option value="">Seleccione...</option>
+                  <option value=0> 0 %</option>
+                  <option value=0.04> 4 %</option>
+                  <option value=0.10>10 %</option>
+                  <option value=0.21>21 %</option>
+          </select>
+          >
+        </div>
+        <div class="form-group">
+          <label for="iva">Importe IVA</label>
+          <input type="number"
+                 class="form-control"
+                 id="iva"
+                 formControlName="iva"
+                 [(ngModel)]="facturaForm.value.iva"
+                 disabled>
+        </div>
+        <div class="form-group">
+          <label for="total">Total Factura IVA Incluido</label>
+          <input type="number"
+                 class="form-control"
+                 id="total"
+                 formControlName="total"
+                 [(ngModel)]="facturaForm.value.total"
+                 disabled>
+        </div>
+        <button type="submit"
+              class="btn btn-primary"
+              [disabled]="!facturaForm.valid"
+              >Añadir Factura</button>
+        <a class="btn btn-danger" routerLink="/facturas">Cancelar</a>
+        <p class="alert alert-danger" *ngIf="!facturaForm.valid">
+          Por favor complete todos los campos
+        </p>
+    </form>
+    <hr>
+   </div>
+</div>

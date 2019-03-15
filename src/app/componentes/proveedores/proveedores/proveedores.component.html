@@ -1,0 +1,38 @@
+<h3>Listado proveedores</h3>
+<a class="btn btn-primary float-md-right" routerLink="/addprovee">Añadir nuevo proveedor</a>
+
+<div *ngIf="cargando" class="text-center" style="padding-top: 60px;">
+  <img src="../../../../assets/spinner.gif" alt="cargando">
+</div>
+<div *ngIf="!cargando">
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="filters">
+            <th>Nombre</th>
+            <th>Cif</th>
+            <th>Direccion</th>
+            <th>Cp</th>
+            <th>Localidad</th>
+            <th>Provincia</th>
+            <th>Telefono</th>
+            <th>Email</th>
+            <th>Contacto</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let proveedor of proveedores">
+            <th>{{proveedor.nombre}}</th>
+            <th>{{proveedor.cif}}</th>
+            <th>{{proveedor.direccion}}</th>
+            <th>{{proveedor.cp}}</th>
+            <th>{{proveedor.localidad}}</th>
+            <th>{{proveedor.provincia}}</th>
+            <th>{{proveedor.telefono}}</th>
+            <th>{{proveedor.email}}</th>
+            <th>{{proveedor.contacto}}</th>
+        </tr>
+
+    </tbody>
+</table>
+</div>

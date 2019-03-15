@@ -1,0 +1,34 @@
+<h3>Listado de Facturas</h3>
+<a class="btn btn-primary float-md-right" routerLink="/addfra">Añadir nueva factura</a>
+<br>
+ <table class="table table-bordered table-striped tabla" style="margin-top: 40px;">
+  <thead>
+    <tr class="filters">
+      <th>Cliente</th>
+      <th>Fecha</th>
+      <th>Concepto</th>
+      <th class="text-right">Base Imponible</th>
+      <th class="text-right">Importe IVA</th>
+      <th class="text-right">Total</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let factura of facturas">
+      <td>{{ factura.proveedor }}</td>
+      <td>{{ factura.fecha | date:'dd-MM-yyyy' }}</td>
+      <td>{{ factura.concepto }}</td>
+      <td class="text-right">{{ factura.base | number:'1.2-2' }}</td>
+      <td class="text-right">{{ factura.iva | number:'1.2-2'}}</td>
+      <td class="text-right">{{ factura.total | number:'1.2-2'}}</td>
+      <td>
+        <button type="button" class="btn btn-success"
+                routerLink="/editfra/{{ factura.id$ }}">Editar</button>
+      </td>
+      <td>
+            <button class="btn btn-danger" (click)="eliminarFactura(factura.id$)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

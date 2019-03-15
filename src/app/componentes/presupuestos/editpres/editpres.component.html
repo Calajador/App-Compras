@@ -1,0 +1,58 @@
+<div class="row animated fadeIn fast">
+  <div class="col col-md"></div>
+  <div class="col-10 col-md-8">
+      <h2 class="animated fast">Editar presupuesto</h2>
+      <a class="btn btn-primary float-md-right" routerLink="/presupuestos">Regresar al listado</a>
+      <form [formGroup]="presupuestoForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label for="Cliente">Cliente</label>
+              <input type="text" class="form-control" id="Cliente" formControlName="Cliente"
+                [(ngModel)] = "presupuesto.Cliente">
+          </div>
+
+          <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input type="date" class="form-control" id="fecha" formControlName="fecha"
+              [(ngModel)] = "presupuesto.fecha">
+          </div>
+
+          <div class="form-group">
+              <label for="concepto">Concepto</label>
+              <input type="text" class="form-control" id="concepto" formControlName="concepto"
+              [(ngModel)] = "presupuesto.concepto">
+          </div>
+
+          <div class="form-group">
+              <label for="base">Base Imponible</label>
+              <input type="number" class="form-control" id="base" formControlName="base"
+              [(ngModel)] = "presupuesto.base">
+          </div>
+
+          <div class="form-group">
+              <label for="tipo">Tipo de IVA</label>
+              <select class="form.control" id="tipo" formControlName="tipo" [(ngModel)] = "presupuesto.tipo">
+                <option value="">Seleccione...</option>
+                <option value=0>0 %</option>
+                <option value=0.04>4 %</option>
+                <option value=0.10>10 %</option>
+                <option value=0.21>21 %</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label for="iva">IVA</label>
+              <input type="number" class="form-control" id="iva" formControlName="iva" [(ngModel)]="presupuestoForm.value.iva" disabled>
+          </div>
+
+          <div class="form-group">
+              <label for="total">Total</label>
+              <input type="number" class="form-control" id="total" formControlName="total" [(ngModel)]="presupuestoForm.value.total" disabled>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!presupuestoForm.valid">Editar Presupuesto</button>
+          <p class="alert alert-danger" *ngIf="!presupuestoForm.valid">
+              Por Favor complete todos los campos
+          </p>
+      </form>
+  </div>
+  <div class="col col-md"></div>
+</div>

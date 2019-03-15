@@ -1,0 +1,40 @@
+<h3>Listado de Clientes</h3>
+
+<table class="table table-bordered table-striped">
+
+  <thead>
+
+    <tr class="filters">
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Localidad</th>
+      <th>CP</th>
+      <th>Email</th>
+      <th>Tel</th>
+      <th>Metros</th>
+      <th>Cuartos</th>
+      <th>Colores</th>
+      <th>Mural</th>
+      <th>Descripcion</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let cliente of clientes">
+      <th>{{cliente.Nombre}}</th>
+      <th>{{cliente.Direccion}}</th>
+      <th>{{cliente.Localidad}}</th>
+      <th>{{cliente.CP}}</th>
+      <th>{{cliente.email}}</th>
+      <th>{{cliente.Tel}}</th>
+      <th>{{cliente.Metros}}</th>
+      <th>{{cliente.Cuartos}}</th>
+      <th>{{cliente.Colores}}</th>
+      <th>{{cliente.Mural}}</th>
+      <th>{{cliente.Descripcion}}</th>
+    </tr>
+
+  </tbody>
+
+</table>

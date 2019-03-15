@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col col-md"></div>
+    <div class="col-10 col-md-8">
+        <h2>Editar proveedor</h2>
+        <a class="btn btn-primary float-md-right" routerLink="/proveedores">Regresar al listado</a>
+        <form (ngSubmit)="onSubmit()" #formpro="ngForm">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" ngModel name="nombre" [(ngModel)]="proveedor.nombre">
+            </div>
+            <div class="form-group">
+                <label for="cif">CIF</label>
+                <input type="text" class="form-control" id="cif" ngModel name="cif" [(ngModel)]="proveedor.cif">>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Direccion</label>
+                <input type="text" class="form-control" id="direccion" ngModel name="direccion" [(ngModel)]="proveedor.direccion">>
+            </div>
+            <div class="form-group">
+                <label for="cp">CP</label>
+                <input type="text" class="form-control" id="cp" ngModel name="cp" [(ngModel)]="proveedor.cp">>
+            </div>
+            <div class="form-group">
+                <label for="localidad">Localidad</label>
+                <input type="text" class="form-control" id="Localidad" ngModel name="localidad" [(ngModel)]="proveedor.localidad">>
+            </div>
+            <div class="form-group">
+                <label for="provincia">provincia</label>
+                <select class="form-control" id="provincia" ngModel name="provincia" [(ngModel)]="proveedor.provincia">
+                <option value="">Seleccione provincia</option>
+                <option *ngFor="let provincia of provincias" [value]="provincia">{{provincia}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Telefono</label>
+                <input type="number" class="form-control" id="Telefono" ngModel name="telefono" [(ngModel)]="proveedor.telefono">>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <i class="fa fa-check-circle check" *ngIf="email.valid"></i>">
+                <i class="fa fa-exclamation-circle uncheck" *ngIf="email.invalid && email.touched"></i>">
+                <input type="email" class="form-control" id="email" ngModel name="email" required email #email="ngModel" [(ngModel)]="proveedor.email">>
+            </div>
+            <div class="form-group">
+                <label for="contacto">Contacto</label>
+                <input type="text" class="form-control" id="contacto" ngModel name="contacto" [(ngModel)]="proveedor.contacto">>
+            </div>
+            <button type="submit" class="btn btn-succes">Editar proveedor</button>
+        </form>
+        <hr>
+
+        <!-- <h4>Estado dirty: {{formpro.controls.email.dirty}}</h4>
+      <h4>Estado pristine: {{formpro.controls.email.pristine}}</h4>
+      <h4>Estado touched: {{formpro.controls.email.touched}}</h4>
+      <h4>Estado valid: {{formpro.controls.email.valid}}</h4>
+      <h4>Estado invalid: {{formpro.controls.email.invalid}}</h4> -->
+    </div>
+    <div class="col col-md"></div>
+
+</div>

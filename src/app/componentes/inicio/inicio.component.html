@@ -1,0 +1,96 @@
+<div class="animated fast fadeIn container">
+  <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+  <div class="card" style="width: 18rem; ">
+    <img class="card-img-top" src="assets/2.jpg" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">Bienvenido al portal de gestión de Pintalia.
+        Pulsa debajo para pedir presupuestos
+      </p>
+    </div>
+  </div>
+</div>
+<div class="col-md-4"></div>
+</div>
+</div>
+
+<div class="row" *ngIf="!isAuth()">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <a routerLink="/pedido" style="text-decoration: none">
+      <div class="rectorange">
+          <i class="fas fa-shopping-cart" style="font-size: 60px"></i>
+          <p style="font-size: 24px, padding-top 15px">Pedir Presupuesto</p>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4"></div>
+
+</div>
+
+<div class="row" *ngIf="isAuth()">
+   <div class="col-md-4">
+        <a routerLink="/clientes" style="text-decoration: none">
+          <div class="rectgreen">
+              <i class="fas fa-address-card" style="font-size: 60px"></i>
+              <p style="font-size: 24px, padding-top 15px">Clientes</p>
+          </div>
+        </a>
+   </div>
+
+    <div class="col-md-4">
+      <a routerLink="/proveedores" style="text-decoration: none">
+        <div class="rectviolet">
+            <i class="fas fa-dolly" style="font-size: 60px"></i>
+            <p style="font-size: 24px, padding-top 15px">Proveedores</p>
+        </div>
+      </a>
+     </div>
+
+    <div class="col-md-4">
+      <a routerLink="/presupuestos" style="text-decoration: none">
+        <div class="rectpink">
+            <i class="fas fa-clipboard-list" style="font-size: 60px"></i>
+            <p style="font-size: 24px, padding-top 15px">Presupuestos</p>
+        </div>
+      </a>
+     </div>
+
+</div>
+
+<hr>
+
+<div class="row" *ngIf="isAuth()">
+  <div class="col-md-4">
+       <a routerLink="/facturas" style="text-decoration: none">
+         <div class="rectblue">
+             <i class="fas fa-money-check-alt" style="font-size: 60px"></i>
+             <p style="font-size: 24px, padding-top 15px">Facturas</p>
+
+         </div>
+       </a>
+  </div>
+
+   <div class="col-md-4">
+     <a routerLink="/contratos" style="text-decoration: none">
+       <div class="rectyellow">
+           <i class="fas fa-address-book" style="font-size: 60px"></i>
+           <p style="font-size: 24px, padding-top 15px">Contratos</p>
+
+       </div>
+     </a>
+    </div>
+
+   <div class="col-md-4">
+     <a routerLink="/nominas" style="text-decoration: none">
+       <div class="rectbrown">
+           <i class="fas fa-file-alt" style="font-size: 60px"></i>
+           <p style="font-size: 24px, padding-top 15px">Nominas</p>
+
+       </div>
+     </a>
+    </div>
+
+</div>
+

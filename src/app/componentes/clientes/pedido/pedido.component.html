@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col col-md"></div>
+  <div class="col-10 col-md-8">
+      <h2>Hacer nuevo Pedido</h2>
+      <form (ngSubmit)="onSubmit()" #formpro="ngForm">
+          <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" ngModel name="nombre">
+          </div>
+          <div class="form-group">
+              <label for="direccion">Direccion</label>
+              <input type="text" class="form-control" id="direccion" ngModel name="direccion">
+          </div>
+          <div class="form-group">
+              <label for="cp">CP</label>
+              <input type="text" class="form-control" id="cp" ngModel name="cp">
+          </div>
+          <div class="form-group">
+              <label for="localidad">Localidad</label>
+              <input type="text" class="form-control" id="Localidad" ngModel name="localidad">
+          </div>
+
+          <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="number" class="form-control" id="Telefono" ngModel name="telefono">
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <i class="fa fa-check-circle check" *ngIf="email.valid"></i>">
+              <i class="fa fa-exclamation-circle uncheck" *ngIf="email.invalid && email.touched"></i>">
+              <input type="email" class="form-control" id="email" ngModel name="email" required email #email="ngModel">
+          </div>
+          <div class="form-group">
+              <label for="metros">Metros</label>
+              <input type="text" class="form-control" id="metros" ngModel name="metros">
+          </div>
+          <div class="form-group">
+            <label for="cuartos">Cuartos</label>
+            <input type="text" class="form-control" id="cuartos" ngModel name="cuartos">
+           </div>
+           <div class="form-group">
+             <label for="colores">Colores</label>
+             <input type="text" class="form-control" id="colores" ngModel name="colores" placeholder="Varios, Uno, Rojo, Azul...">
+           </div>
+           <div class="form-group">
+             <label for="mural">Mural</label>
+             <input type="text" class="form-control" id="mural" ngModel name="mural" placeholder="Si o No">
+           </div>
+           <div>
+             <label for="descripcion"></label>
+             <textarea  id="descripcion" cols="30" rows="3" ngModel name="descripcion" placeholder="En caso afirmativo, breve descrippcion"></textarea>
+           </div>
+          <button type="submit" class="btn btn-succes">Añadir Pedido</button>
+      </form>
+      <hr>
+
+      <!-- <h4>Estado dirty: {{formpro.controls.email.dirty}}</h4>
+      <h4>Estado pristine: {{formpro.controls.email.pristine}}</h4>
+      <h4>Estado touched: {{formpro.controls.email.touched}}</h4>
+      <h4>Estado valid: {{formpro.controls.email.valid}}</h4>
+      <h4>Estado invalid: {{formpro.controls.email.invalid}}</h4> -->
+  </div>
+  <div class="col col-md"></div>
+
+</div>

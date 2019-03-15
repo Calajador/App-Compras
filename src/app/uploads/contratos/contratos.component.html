@@ -1,0 +1,7 @@
+<h3>Listado de Contratos</h3>
+<a class="btn btn-primary float-md-right"
+   routerLink="/uploads">Subir nuevo contrato</a>
+<br>
+<div *ngFor="let upload of uploads | async">
+  <app-detalles [upload]="upload"></app-detalles>
+</div>

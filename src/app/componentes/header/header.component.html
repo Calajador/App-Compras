@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" routerLink="/">Inicio</a>
+    <div class="collapse navbar-collapse" id="containerNavbar">
+        <ul class="navbar-nav mr-auto w-100 justify-content-end">
+
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+            *ngIf="isAuth()">
+                <a class="nav-link" routerLink="/">Inicio </a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active"
+            *ngIf="isAuth()">
+                <a class="nav-link" routerLink="/clientes">Clientes</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active"
+            *ngIf="isAuth()">
+                <a class="nav-link" routerLink="/proveedores">Proveedores</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active"
+            *ngIf="isAuth()">
+                <a class="nav-link" routerLink="/presupuestos">Presupuesto</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active"
+            *ngIf="isAuth()">
+                <a class="nav-link" routerLink="/facturas">Facturas</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active"
+            *ngIf="isAuth()">
+                <a class="nav-link" routerLink="/contratos">Contratos</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active"
+            *ngIf="isAuth()">
+              <a class="nav-link" routerLink="/registro">Registro</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active"
+            *ngIf="!isAuth()">
+              <a class="nav-link" routerLink="/pedido">Hacer Pedido</a>
+          </li>
+
+            <li class="nav-item" routerLinkActive="active"
+            *ngIf="!isAuth()">
+              <a class="nav-link" routerLink="/inises">Inicio de Sesion</a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active"
+            *ngIf="isAuth()">
+              <button class="btn btn-success" (click)="onLogOut()">Cerrar Sesion</button>
+          </li>
+
+        </ul>
+    </div>
+</nav>
+
+
